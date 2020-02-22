@@ -7,6 +7,6 @@ from django.urls import path
 
 urlpatterns = [
     path('fir/', views.index),
-    #path('store/', include('alexstore')),
-    #path('', include('alexstore.urls')),
+    path('store/', include('alexstore')),
+    path('', include('alexstore.urls')),
 ]

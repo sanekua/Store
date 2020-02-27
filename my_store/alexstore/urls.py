@@ -6,7 +6,7 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('home/', views.about),
-    path('about/', views.home, name='monday'),
+    path('home/', views.home),
+    path('about/', views.about, name='monday'),
     #path('', include('alexstore.urls')),
 ]

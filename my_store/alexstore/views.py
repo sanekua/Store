@@ -15,7 +15,6 @@ posts = [
         'titlee': 'Blog post 2',
         'content': 'content 2',
         'date': ' 24 February day number 2',
-
     }
 
 
@@ -34,3 +33,21 @@ def home(request):
     return render(request, 'alexstore/home.html',context)
 
 # Create your views here.
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Your account has been created! You are now able to log in')
+            return redirect('login')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'users/register.html', {'form': form})
+
+
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')

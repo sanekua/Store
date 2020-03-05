@@ -5,14 +5,14 @@ from django.http import HttpResponse
 posts = [
     {
         'author': 'Alex',
-        'titlee' : 'Blog post',
+        'title' : 'Blog post',
         'content' : 'our post content',
         'date' : ' 24 Febr',
 
     },
     {
         'author': 'Max',
-        'titlee': 'Blog post 2',
+        'title': 'Blog post 2',
         'content': 'content 2',
         'date': ' 24 February day number 2',
     }
@@ -22,13 +22,15 @@ posts = [
 
 
 def about(request):
-    return render(request, 'alexstore/about.html')
+    return render(request, 'alexstore/about.html',{'title': 'What a beautiful day'})
+
 
 
 
 def home(request):
     context = {
-        'posts' : posts
+        'posts' : posts,
+        'title':'Our tite'
     }
     return render(request, 'alexstore/home.html',context)
 

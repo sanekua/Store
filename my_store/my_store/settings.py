@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     #'alexstore',
     'alexstore.apps.AlexstoreConfig',
+    'users.apps.UsersConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
